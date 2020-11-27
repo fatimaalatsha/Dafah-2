@@ -1,10 +1,11 @@
 var express = require('express');
-const cors=require('cors');
 const mongoose=require('mongoose');
+const cors=require('cors');
 
 
 const app = express();
 const port=process.env.PORT || 3000;
+
 app.use(cors())
 app.use(express.json())
 const uri="mongodb+srv://dafah-project:dafah123@cluster0.9lw2y.mongodb.net/<dbname>?retryWrites=true&w=majority"
@@ -12,7 +13,7 @@ mongoose.connect(uri,{useNewUrlParser: true ,useUnifiedTopology: true ,useCreate
 const connection=mongoose.connection;
 
 // UNCOMMENT FOR REACT
-// app.use(express.static(__dirname + '/../react-client/dist'));
+app.use(express.static(__dirname + '/../react-client/dist'));
 
 connection.once('open',() => {
 console.log("mongodb connected");
