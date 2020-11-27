@@ -18,3 +18,5 @@ router.route('/add').post((req, res) => {
   .then(() => res.json('item added!'))
   .catch(err => res.status(400).json('Error: ' + err));
 });
+//To solve the  throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn)),just added this line
+module.exports = router;

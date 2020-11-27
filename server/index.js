@@ -19,8 +19,13 @@ connection.once('open',() => {
 console.log("mongodb connected");
 })
 
-// const itemRouter = require('./router/items');
-// app.use('/item', itemRouter);
+const itemRouter = require('./router/items');
+ app.use('/item', itemRouter);
+
+ //the rout file is not done yet f
+//  const userRouter = require('./router/users');
+//  app.use('/user', userRouter);
+
 
 
 app.listen(3000, function() {
